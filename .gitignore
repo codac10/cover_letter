@@ -1,5 +1,8 @@
 # Ignore virtual environment
-venv/
+.venv/
+
+# Ignore logs
+.DS_Store
 
 # Ignore system files
 __pycache__/
