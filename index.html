@@ -80,7 +80,7 @@
                 <div class="col-md-8">
                     <h2>Escribe tu Carta de Presentación</h2>
                     <div class="mb-3">
-                        <label for="cover_letter" class="form-label">Escribe el texto de la carta de presentación. Donde escribas "@company" se escribirá el nombre de la empresa deseada:</label>
+                        <label for="cover_letter" class="form-label">Escribe el texto de la carta de presentación. Donde escribas [EMPRESA] se escribirá el nombre de la empresa deseada:</label>
                         <div id="cover_letter" contenteditable="true" onpaste="handlePaste(event)" oninput="updateHiddenInput()" class="form-control" required></div>
                     </div>
                     <input type="hidden" id="cover_letter_input" name="cover_letter" />
@@ -174,9 +174,9 @@
         area.addEventListener("input", function () {
             const text = area.innerHTML;
 
-            // Check if '@company' is typed and not already inserted
-            if (!isCompanyInserted && text.includes("@company")) {
-                replaceText("@company", '<span class="border-box truncate pill px1 cellToken choiceToken inline-block redLight2 print-color-exact text-dark" contenteditable="false" id="companyToken">@company</span>&nbsp;');
+            // Check if '[EMPRESA]' is typed and not already inserted
+            if (!isCompanyInserted && text.includes("[EMPRESA]")) {
+                replaceText("[EMPRESA]", '<span class="border-box truncate pill px1 cellToken choiceToken inline-block redLight2 print-color-exact text-dark" contenteditable="false" id="companyToken">[EMPRESA]</span>&nbsp;');
                 isCompanyInserted = true;
             }
 

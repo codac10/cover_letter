@@ -3,7 +3,7 @@ from generate_letter import generate_pdf, write_letter
 import logging
 
 # Initialize the Flask application
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 app.secret_key = 'your_secret_key'  # Replace with your secret key
 
 # Configure logging
@@ -38,7 +38,7 @@ def form():
         if pdf_buffer is None:
             logging.error("PDF generation failed.")
             flash("Error generating PDF. Please try again.", "error")
-            return redirect(url_for('form'))
+            return redirect(url_for('index'))
 
         # Log the successful PDF generation
         logging.info(f"PDF generated successfully for {full_name} at {company}. Preparing to send.")
@@ -47,7 +47,7 @@ def form():
         return send_file(pdf_buffer, as_attachment=True, download_name=f"Cover_Letter_{company}.pdf", mimetype='application/pdf')
 
     # Render the form template for GET requests
-    return render_template('form.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
     # Run the Flask application

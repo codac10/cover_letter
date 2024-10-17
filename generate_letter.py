@@ -35,7 +35,7 @@ def write_letter(text, company_name, full_name, email, phone):
     # Replace & with its HTML entity to render correctly
     #text = text.replace('&', '&amp;')
     
-    content = text.replace('@company', company_name)
+    content = text.replace('[EMPRESA]', company_name)
     #content = text.replace('<span class="border-box truncate pill px1 cellToken choiceToken inline-block redLight2 print-color-exact text-dark" contenteditable="false" id="companyToken">@company</span>', company_name)
     
                
