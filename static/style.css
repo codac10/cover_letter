@@ -1,0 +1,162 @@
+/* General Reset */
+body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container fluid for full width */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Highlight box style */
+.highlight-box {
+    background-color: rgba(0, 0, 139, 0.2); /* Dark blue with low opacity */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    color: black; /* Adjust text color as needed */
+}
+
+/* Ad Box Styles */
+.ad-box {
+    border: 2px dashed #ccc;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+}
+
+.top-ad {
+    width: 100%;
+    height: 5%;
+}
+
+.bottom-ad {
+    width: 100%;
+    height: 10%;
+}
+
+.side-ad {
+    width: 10%;
+    height: 90%;
+}
+
+/* Main Content Styling */
+.flex-grow-1 {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: #2980b9;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #1c598a;
+}
+
+#cover_letter {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Base style for the token (use the existing class) */
+.border-box {
+    display: inline-block;
+    background-color: #f8d7da; /* Light pink background (similar to your 'Todo' token) */
+    color: #000; /* Black text */
+    padding: 4px 12px; /* Adjusted padding to create the pill shape */
+    border-radius: 20px; /* More rounded corners to match the pill appearance */
+    font-size: 13px; /* Consistent text size */
+    font-weight: 400; /* Regular font weight */
+    text-align: center; /* Center the text horizontally */
+    vertical-align: middle; /* Align the text vertically */
+    line-height: 1.4; /* Ensure proper text height */
+    border: none; /* Remove the border to match the "Todo" token */
+    box-shadow: none; /* Remove any shadow if present */
+    min-width: 18px; /* Maintain minimum width */
+    height: auto; /* Adjust height automatically based on the content */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pill {
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.px1 {
+    padding: 5px;
+}
+
+.cellToken {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 3px 6px;
+}
+
+.choiceToken {
+    background-color: #e0e7ff;
+    border: 1px solid #5a67d8;
+    padding: 3px 6px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.redLight2 {
+    background-color: #ffc2c2;
+}
+
+.print-color-exact {
+    color: #000;
+}
+
+.text-dark {
+    color: #333;
+}

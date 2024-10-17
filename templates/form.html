@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cartas de Presentación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/style.css"> <!-- Enlace a tu archivo CSS -->
+
+    <!-- Google Ads Scripts -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5716404770479417" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Top Ad 
+    <div class="ad-box top-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5716404770479417"
+             data-ad-slot="2523265792"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    -->
+
+    <!-- Page Content -->
+    <div class="container-fluid d-flex mt-4 justify-content-between px-0">
+
+        <!-- Left Ad 
+        <div class="ad-box side-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5716404770479417"
+                 data-ad-slot="6462510801"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>-->
+
+        <!-- Main Content -->
+        <div class="flex-grow-1 mx-2">
+            <h1 class="text-center">Generador de Cartas de Presentación</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Información Personal</h2>
+                    <form id="coverLetterForm" method="POST" action="/" onsubmit="prepareForm()">
+                        <div class="mb-3">
+                            <label for="full_name" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="full_name" name="full_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Número de Teléfono</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+
+                        <!-- ad-square-1 
+                        <div class="ad-box">
+                            <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-5716404770479417"
+                            data-ad-slot="4121086798"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                        -->
+                </div>
+                <div class="col-md-8">
+                    <h2>Escribe tu Carta de Presentación</h2>
+                    <div class="mb-3">
+                        <label for="cover_letter" class="form-label">Escribe el texto de la carta de presentación. Donde escribas "@company" se escribirá el nombre de la empresa deseada:</label>
+                        <div id="cover_letter" contenteditable="true" onpaste="handlePaste(event)" oninput="updateHiddenInput()" class="form-control" required></div>
+                    </div>
+                    <input type="hidden" id="cover_letter_input" name="cover_letter" />
+                    <div class="d-flex align-items-end">
+                        <div class="col-md-6 pe-2">
+                            <label for="company" class="form-label">Nombre de la Empresa</label>
+                            <input type="text" class="form-control" id="company" name="company" required>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Descargar PDF</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Ad 
+        <div class="ad-box side-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5716404770479417"
+                 data-ad-slot="8202967888"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>-->
+    </div>
+
+    <!-- Bottom Ad 
+    <div class="ad-box bottom-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5716404770479417"
+             data-ad-slot="2523265792"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>-->
+
+    <script>
+        // Función para copiar el contenido del div contenteditable al campo oculto antes de enviar el formulario
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const coverLetterContent = document.getElementById('cover_letter').innerHTML;
+            document.getElementById('cover_letter_input').value = coverLetterContent;
+        });
+
+        function prepareForm() {
+            var coverLetterContent = document.getElementById("cover_letter").innerHTML;
+            document.getElementById("cover_letter_input").value = coverLetterContent;
+        }
+
+        function handlePaste(event) {
+            event.preventDefault(); // Prevent the default paste behavior
+            const clipboardData = (event.clipboardData || window.clipboardData).getData('text'); // Get plain text
+            document.execCommand('insertText', false, clipboardData); // Insert plain text
+        }
+    
+        function updateHiddenInput() {
+            const content = document.getElementById('cover_letter').innerText; // Get the plain text content
+            document.getElementById('cover_letter_input').value = content; // Set it in the hidden input field
+        }
+    /*
+        var area = document.getElementById("cover_letter");
+
+        var replaceText = function (search, replaceWith) {
+            var currentHTML = area.innerHTML;
+            if (currentHTML.includes(search)) {
+                var updatedHTML = currentHTML.replace(new RegExp(`(?<!highlight-box">)` + search, 'g'), replaceWith);
+                area.innerHTML = updatedHTML;
+                placeCaretAtEnd(area);
+            }
+        };
+
+        var placeCaretAtEnd = function (el) {
+            el.focus();
+            var range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        };
+
+        var isCompanyInserted = false;
+
+        area.addEventListener("input", function () {
+            const text = area.innerHTML;
+
+            // Check if '@company' is typed and not already inserted
+            if (!isCompanyInserted && text.includes("@company")) {
+                replaceText("@company", '<span class="border-box truncate pill px1 cellToken choiceToken inline-block redLight2 print-color-exact text-dark" contenteditable="false" id="companyToken">@company</span>&nbsp;');
+                isCompanyInserted = true;
+            }
+
+            // Check if the span with id 'companyToken' exists and has been removed
+            const companyToken = document.getElementById("companyToken");
+            if (isCompanyInserted && !companyToken) {
+                // Reset the flag when the span is deleted
+                isCompanyInserted = false;
+            }
+        });*/
+
+
+    </script>  
+</body>
+</html>
