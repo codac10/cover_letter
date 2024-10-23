@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from generate_letter import generate_pdf, write_letter
 import logging
+import os
 
 # Initialize the Flask application
 app = Flask(__name__, template_folder='.')
@@ -51,4 +52,4 @@ def form():
 
 if __name__ == '__main__':
     # Run the Flask application
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
